@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SistemaInventa.AccesoDatos.Data;
+using SistemaInventa.AccesoDatos.Repositorio;
+using SistemaInventa.AccesoDatos.Repositorio.IRepositorio;
 
 
 internal class Program
@@ -18,6 +20,9 @@ internal class Program
         builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
         builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+        builder.Services.AddScoped<IUnidadTrabajo, UnidadTrabajo>();
+
 
         var app = builder.Build();
 
