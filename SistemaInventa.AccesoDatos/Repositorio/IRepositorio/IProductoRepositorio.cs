@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace SistemaInventa.AccesoDatos.Repositorio.IRepositorio
 {
-    public interface IBodegaRepositorio : Irepositorio<Bodega>
+    public interface IProductoRepositorio : Irepositorio<Producto>
     {
-        void Actualizar(Bodega bodega);
-        
+        void Actualizar(Producto producto);
+        IEnumerable<SelectListItem> ObtenerTodosDropdownLista(String obj);
     }
 }
  
